@@ -1,0 +1,22 @@
+{
+  "source": "Author-reported counts and observations supplied in this conversation",
+  "configuration": "Fixed within the reported campaign; separate from development calibration",
+  "scenarios": [
+    {"id":"T1", "trials":20, "successes":17, "failures":3, "failure_description":"Robot stopped partly outside space 1, although the parking sequence completed"},
+    {"id":"T2", "trials":20, "successes":18, "failures":2, "failure_description":"Robot stopped partly outside space 1, although the parking sequence completed"},
+    {"id":"T3a", "trials":20, "successes":20, "failures":0, "failure_description":"No failure reported; entry withheld until the monitored route was free"},
+    {"id":"T3b", "trials":20, "successes":20, "failures":0, "failure_description":"No failure reported; Robot entry withheld until space 1 was free"},
+    {"id":"T4", "trials":20, "successes":16, "failures":4, "failure_description":"Deviation after the corner turn; two of the four attempts missed entrance detection/stopping and continued moving"},
+    {"id":"T5", "trials":20, "successes":20, "failures":0, "failure_description":"No failure reported in the manual Car 2 exit procedure"},
+    {"id":"T6", "trials":20, "successes":17, "failures":3, "failure_description":"Robot returned from the safe spot misaligned and required manual correction"},
+    {"id":"T7", "trials":20, "successes":18, "failures":2, "failure_description":"Deviation after the corner turn; one of the two attempts missed entrance detection/stopping and continued moving"},
+    {"id":"T8", "trials":20, "successes":15, "failures":5, "failure_description":"Three missed entrance detection/stopping events after corner deviation; two contacts with the corner sensor after resumption, followed by completed exit"},
+    {"id":"T9", "trials":20, "successes":19, "failures":1, "failure_description":"Robot stopped partly outside space 1 despite logical parking and scenario completion"}
+  ],
+  "failure_groups": [
+    {"name":"Parking position outside space 1", "count":6, "scenarios":"T1: 3; T2: 2; T9: 1"},
+    {"name":"Exit trajectory / entrance arrival", "count":9, "scenarios":"T4: 4; T7: 2; T8: 3", "subset_missed_entrance_stop":6},
+    {"name":"Safe-spot return requiring correction", "count":3, "scenarios":"T6: 3"},
+    {"name":"Contact with corner sensor", "count":2, "scenarios":"T8: 2"}
+  ]
+}
